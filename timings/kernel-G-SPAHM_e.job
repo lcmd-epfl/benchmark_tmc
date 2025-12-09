@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#SBATCH --job-name=kernel-G-SPAHM_e
+#SBATCH --mem=16GB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+
+conda activate qstack
+
+python -u "/home/ycho/benchmark_tmc/timings/time_kernel_qstack.py" --rep_file "SPAHM_e-TM-GSspinPlus.npy" --akernel "G"
+

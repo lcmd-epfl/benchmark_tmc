@@ -1,0 +1,4 @@
+{'rep_file': 'SPAHM_e-TM-GSspinPlus.npy', 'akernel': 'G'}
+kernel_builder :  real: 0.6288  user: 0.5571  sys: 0.0316
+Kernel generation times (G):
+0.6288943737745285
