@@ -1,0 +1,5 @@
+{'rep_file': 'TM-GSspinPlus/examples_output/SPAHM_e-TM-GSspinPlus-subset.npy', 'akernel': 'L'}
+kernel_builder :  real: 1.0792  user: 0.1435  sys: 0.0143
+Loaded representation file: TM-GSspinPlus/examples_output/SPAHM_e-TM-GSspinPlus-subset.npy
+Representation shape: (500, 736)
+Kernel generation times (L): 1.079256847500801

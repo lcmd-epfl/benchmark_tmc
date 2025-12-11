@@ -1,0 +1,5 @@
+{'rep': 'SOAP', 'xyz': '/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz', 'debug': True, 'subset': None}
+SOAP representations generated!
+rep_generator :  real: 1.0897  user: 1.3924  sys: 0.1036
+Representation shape: (10, 103680)
+Generation time: 1.0897506391629577

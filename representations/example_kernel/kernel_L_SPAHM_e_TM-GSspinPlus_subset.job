@@ -1,0 +1,12 @@
+#!/bin/bash -l
+#SBATCH --job-name=kernel_L_SPAHM_e_TM-GSspinPlus_subset
+#SBATCH --mem=16GB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH -o kernel_L_SPAHM_e_TM-GSspinPlus_subset.out
+#SBATCH -e kernel_L_SPAHM_e_TM-GSspinPlus_subset.err
+
+conda activate qstack
+
+python -u "time_kernel_qstack.py" --rep_file "TM-GSspinPlus/examples_output/SPAHM_e-TM-GSspinPlus-subset.npy" --akernel "L"
+

@@ -1,0 +1,11 @@
+#!/bin/bash -l
+#SBATCH --job-name=generate_SOAP_TM-GSspinPlus_debug
+#SBATCH --mem=128GB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH -o generate_SOAP_TM-GSspinPlus_debug.out
+#SBATCH -e generate_SOAP_TM-GSspinPlus_debug.err
+
+conda activate cosmo
+
+python -u "generate_rep_soap_featomic.py" --rep "SOAP" --xyz "/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz" --debug

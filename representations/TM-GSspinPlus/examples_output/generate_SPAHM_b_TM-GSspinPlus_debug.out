@@ -1,0 +1,6 @@
+{'rep': 'SPAHM_b', 'xyz': '/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz', 'debug': True, 'subset': None}
+Selecting atom-types in ['Cr', 'Mn', 'Fe', 'Co', 'Ni']
+SPAHM_b representations generated!
+rep_generator :  real: 197.7005  user: 2166.5688  sys: 972.5682
+Representation shape: (10, 9972)
+Generation time: 197.70051868259907

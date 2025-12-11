@@ -1,0 +1,5 @@
+{'rep': 'SPAHM_e', 'xyz': '/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz', 'debug': True, 'subset': None}
+SPAHM_e representations generated!
+rep_generator :  real: 2.2889  user: 28.3579  sys: 2.1028
+Representation shape: (10, 736)
+Generation time: 2.288882926106453

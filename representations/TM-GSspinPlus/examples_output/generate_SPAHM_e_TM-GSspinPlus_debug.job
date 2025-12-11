@@ -1,0 +1,11 @@
+#!/bin/bash -l
+#SBATCH --job-name=generate_SPAHM_e_TM-GSspinPlus_debug
+#SBATCH --mem=128GB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH -o generate_SPAHM_e_TM-GSspinPlus_debug.out
+#SBATCH -e generate_SPAHM_e_TM-GSspinPlus_debug.err
+
+conda activate qstack
+
+python -u "generate_rep_spahm_qstack.py" --rep "SPAHM_e" --xyz "/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz" --debug
