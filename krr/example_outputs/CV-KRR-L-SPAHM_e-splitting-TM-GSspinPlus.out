@@ -1,0 +1,21 @@
+{'repr': 'TM-GSspinPlus/0-repr/SPAHM_e-TM-GSspinPlus.npy', 'prop': 'TM-GSspinPlus/1-prop/splitting-TM-GSspinPlus.txt', 'dir_indices': 'TM-GSspinPlus/2-cv10-splits', 'akernel': 'myLfast', 'gkernel': None, 'gdict': {'alpha': 1.0, 'normalize': 1}, 'printlevel': 0, 'eta': [1e-10, 3.162277660168379e-08, 1e-05, 0.0031622776601683794, 1.0], 'sigma': [1.0, 3.1622776601683795, 10.0, 31.622776601683793, 100.0, 316.22776601683796, 1000.0, 3162.2776601683795, 10000.0, 31622.776601683792, 100000.0, 316227.7660168379, 1000000.0], 'll': False, 'save_all': True, 'adaptive': True, 'readk': False, 'nameout': 'example_outputs/CV-KRR-L-SPAHM_e-splitting-TM-GSspinPlus'}
+Number of training samples: 2034, Number of test samples: 226
+0 [3.38462571e+01 1.06195673e+00 3.16227766e-03 1.00000000e+03]
+Number of training samples: 2034, Number of test samples: 226
+1 [3.43423873e+01 7.94317549e-01 3.16227766e-03 3.16227766e+04]
+Number of training samples: 2034, Number of test samples: 226
+2 [3.48579734e+01 9.92929382e-01 3.16227766e-03 3.16227766e+03]
+Number of training samples: 2034, Number of test samples: 226
+3 [3.49187108e+01 1.15479501e+00 3.16227766e-03 1.00000000e+03]
+Number of training samples: 2034, Number of test samples: 226
+4 [3.40308937e+01 6.79716711e-01 3.16227766e-03 3.16227766e+03]
+Number of training samples: 2034, Number of test samples: 226
+5 [3.57544795e+01 1.24411172e+00 3.16227766e-03 1.00000000e+03]
+Number of training samples: 2034, Number of test samples: 226
+6 [3.48524856e+01 1.87055378e+00 3.16227766e-03 3.16227766e+04]
+Number of training samples: 2034, Number of test samples: 226
+7 [3.46941721e+01 1.22054832e+00 3.16227766e-03 3.16227766e+03]
+Number of training samples: 2034, Number of test samples: 226
+8 [3.55948568e+01 1.21470031e+00 3.16227766e-03 1.00000000e+03]
+Number of training samples: 2034, Number of test samples: 226
+9 [3.40239833e+01 1.59667015e+00 3.16227766e-03 3.16227766e+03]

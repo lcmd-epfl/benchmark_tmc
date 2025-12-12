@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#SBATCH --job-name=TrainValid-KRR-G-SPAHM_a-splitting-OctaKulik
+#SBATCH --mem=64GB
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH -o example_outputs/TrainValid-KRR-G-SPAHM_a-splitting-OctaKulik.out
+#SBATCH -e example_outputs/TrainValid-KRR-G-SPAHM_a-splitting-OctaKulik.err
+
+conda activate qstack
+
+python -u /home/ycho/benchmark_tmc/krr/final_error.py --x OctaKulik/splitting/0-repr/SPAHM_a_LS-OctaKulik.npy --y OctaKulik/splitting/1-prop/splitting-OctaKulik.txt --train_idx OctaKulik/splitting/3-train-valid-meyer/0-train_indices.txt --test_idx OctaKulik/splitting/3-train-valid-meyer/0-test_indices.txt --akernel G --ada --save --name example_outputs/TrainValid-KRR-G-SPAHM_a-splitting-OctaKulik
+
+exit 0
