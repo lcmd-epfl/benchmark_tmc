@@ -2,7 +2,6 @@
 
 Generate molecular representations (with timing measurements).
 
-------------------------------------------------------------------------
 
 ## 1. Move into the dataset directory
 
@@ -10,7 +9,6 @@ Generate molecular representations (with timing measurements).
 cd TM-GSspinPlus
 ```
 
-------------------------------------------------------------------------
 
 ## 2. Generate SLURM job scripts and submit
 
@@ -31,7 +29,7 @@ bash ../dataset_submit.sh generate_rep_slatm_fchl_qml2.py SLATM qml2 TM-GSspinPl
 #### 2-3. Using featomic (e.g., SOAP)
 
 ``` bash
-bash ../dataset_submit.sh generate_rep_soap_featomic.py SOAP_global cosmo TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz
+bash ../dataset_submit.sh generate_rep_soap_featomic.py SOAP_global featomic TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz
 ```
 
 ### Debug mode
@@ -44,7 +42,6 @@ bash ../dataset_submit.sh generate_rep_spahm_qstack.py SPAHM_e qstack TM-GSspinP
 
 *For details, see `dataset_submit.sh` and each Python script.*
 
-------------------------------------------------------------------------
 
 ### For a subset (used for measuring timings)
 
@@ -52,7 +49,7 @@ bash ../dataset_submit.sh generate_rep_spahm_qstack.py SPAHM_e qstack TM-GSspinP
 bash ../subset_submit.sh generate_rep_spahm_qstack.py SPAHM_e qstack TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz subset_refcodes/TM-GSspinPlus_sub_0.txt
 ```
 
-*For details, see `subset_submit.sh` and prepare a text file containing
+*For details, see `subset_submit.sh`. You need to prepare a text file containing
 the refcodes for the subset. Example outputs are provided in the 
 `TM-GSspinPlus/examples_output/` folder.*
 
@@ -61,7 +58,7 @@ the refcodes for the subset. Example outputs are provided in the
 ## Notes for the OctaKulik Dataset
 
 Representation generation for **HOMO, LUMO, and gap** (using both low-spin and high-spin geometries)  
-and for **splitting** (using only low-spin optimized geometries) is performed **separately**.
+and for **splitting** (using only low-spin optimized geometries) is performed separately.
 
 See the directories:
 
@@ -69,8 +66,6 @@ See the directories:
 - `OctaKulik/splitting/`
 
 ---
-
-------------------------------------------------------------------------
 
 # Kernel Timings
 
