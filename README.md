@@ -2,46 +2,44 @@
 
 This repository provides datasets and scripts for benchmarking physics-inspired machine learning models for property prediction of transition metal complexes with diverse charge and spin states.
 
-## Requirements
+## Setup
+**Prerequisites**
+- Python 3.9 or later
+- `conda` or `pip`
 
-The python scripts require NumPy and Pandas.
-
-Install with:
-
+**Dependencies**
+The Python scripts require NumPy, Pandas, and ASE.
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Molecular Representations
+Molecular representation packages can be built from source by following the official documentation:
+- ε-SPAHM, SPAHM(a), SPAHM(b): https://github.com/lcmd-epfl/Q-stack  
+- SLATM, FCHL: https://github.com/qml2code/qml2  
+- SOAP: https://github.com/metatensor/featomic  
 
-For installation, we recommend using the conda environments `qstack.yml`, `qml2.yml`, and `featomic.yml` provided in this repo. Alternatively, you can manually install the corresponding GitHub repositories:
-
-- https://github.com/lcmd-epfl/Q-stack  
-- https://github.com/qml2code/qml2  
-- https://github.com/metatensor/featomic  
-
-Examples of job scripts and required Python files can be found in the `representations/` directory of this repo.
-
-For kernel ridge regression using molecular representations, see the `krr/` directory.
-
-Precomputed `.npy` files of all molecular representations are available on Materials Cloud.
+Example job scripts and required Python files are provided in the `representations/`.
+Kernel ridge regression examples using molecular representations are available in `krr/`.
+Numpy array of molecular representations used in this work are available on Materials Cloud.
 
 ## 3DMol
 
-For installation instructions and example input files for 3DMol, please refer to:  
+Installation instructions and example input files for 3DMol are available at:
 https://github.com/lcmd-epfl/3DMol/tree/TMC-benchmark-v0
 Trained models and log files are available on Materials Cloud.
 
 ## MACE
 
-To install MACE for intensive property prediction, run:
-
+Install the modified MACE version for intensive property prediction:
 ```bash
-git clone https://github.com/lcmd-epfl/tmc_mace/tree/intensive
+git clone https://github.com/lcmd-epfl/tmc_mace.git
+cd tmc_mace
+git checkout intensive
 pip install -e .
 ```
-Examples of job scripts are provided in the `mace/` directory of this branch.
-Trained models are available on Materials Cloud.
+Example job scripts are provided in `mace/` for each dataset subdirectory.
+Trained models, job scripts, and log files are available on Materials Cloud.
 
 
 
