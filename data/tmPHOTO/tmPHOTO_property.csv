@@ -1,4 +1,4 @@
-refcode,total_charge,multiplicity,HOMO_Ha,LUMO_Ha,gap_Ha,dipole_moment_Debye
+refcode,total_charge,multiplicity,HOMO,LUMO,gap,dipole_moment_Debye
 ABIPIK,0,1,-0.16783,-0.0875,0.08033,0.4901
 ABISOV,0,1,-0.15192,-0.07883,0.07309,15.3955
 ABITEM,0,1,-0.1514,-0.07863,0.07277,15.3991

@@ -30,7 +30,7 @@ Precomputed `.npy` files of all molecular representations are available on Mater
 
 For installation instructions and example input files for 3DMol, please refer to:  
 https://github.com/lcmd-epfl/3DMol/tree/TMC-benchmark-v0
-Trained models are available on Materials Cloud.
+Trained models and log files are available on Materials Cloud.
 
 ## MACE
 

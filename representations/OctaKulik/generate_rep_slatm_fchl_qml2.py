@@ -101,7 +101,7 @@ def main():
     xyzdir = args.xyz
     
     dataset="OctaKulik"
-    df= pd.read_csv("OctaKulik_train_valid_merged.csv")
+    df= pd.read_csv("OctaKulik_train_valid_merged_clean.csv")
     all_xyz_paths = []
     for refcode in df["refcode"]:
         all_xyz_paths.append(os.path.join(xyzdir, f"{refcode}_ls.xyz"))

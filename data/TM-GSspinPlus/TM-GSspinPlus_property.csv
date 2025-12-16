@@ -1,4 +1,4 @@
-refcode,total_charge,multiplicity,splitting,HOMO_eV,LUMO_eV,gap_eV,dipole_moment_Debye
+refcode,total_charge,multiplicity,splitting,HOMO,LUMO,gap,dipole_moment_Debye
 AACANI11,0,3,-11.63,-4.9865,-2.634,2.3525,12.2721
 ABAJIX,2,2,15.57,-11.7195,-8.5144,3.2051,2.74325
 ABATED,0,3,-17.54,-4.0879,-0.9421,3.1458,0.93595
