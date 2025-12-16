@@ -1,4 +1,5 @@
 # Data
+This directory contains all data, including XYZ files, property CSV files, extended XYZ files (for MACE), and dataset splits.
 
 ## TM-GSspinPlus
 The [`TM-GSspinPlus`](TM-GSspinPlus/) directory contains:
@@ -64,7 +65,7 @@ The [`OctaKulik`](OctaKulik/) directory contains:
   - `refcode`: Refcode assigned in this work
   - `total_charge`: Total molecular charge
   - `multiplicity`: Lowest spin multiplicity among low-spin and high-spin states
-  - `splitting`: Vertical spin-splitting energy (kcal/mol)
+  - `splitting`: Adiabatic spin-splitting energy (kcal/mol)
   - `low_spin`: Low-spin multiplicity
   - `high_spin`: High-spin multiplicity
 
