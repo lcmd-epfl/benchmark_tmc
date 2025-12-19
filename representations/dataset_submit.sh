@@ -41,5 +41,5 @@ python -u "${script}" --rep "${rep}" --xyz "${xyz_path}" ${debug_flag}
 EOF
 
 # Submit job
-sbatch "${job}.job"
+sbatch "${job}.job" || bash "${job}.job"
 

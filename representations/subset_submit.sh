@@ -37,5 +37,5 @@ python -u "${script}" --rep "${rep}" --xyz "${xyz_path}" --subset "${subset}"
 EOF
 
 # Submit job
-sbatch "${job}.job"
+sbatch "${job}.job" || bash "${job}.job"
 

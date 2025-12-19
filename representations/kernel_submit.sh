@@ -33,4 +33,4 @@ python -u "${script}" --rep_file "${rep_file_path}" --akernel "${akernel}"
 EOF
 
 # Submit job
-sbatch "${job}.job"
+sbatch "${job}.job" || bash "${job}.job"
