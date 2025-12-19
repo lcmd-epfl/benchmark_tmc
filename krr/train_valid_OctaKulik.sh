@@ -37,8 +37,8 @@ else
 fi
 
 ncpus=16
-mem="64GB"
-conda_env="qstack"
+mem="32GB"
+conda_env="qstack"  # Name of the conda environment
 dir_outputs="example_outputs"
 mkdir -p $dir_outputs
 job="TrainValid-KRR-${kernel}-${rep}-${prop}-${dataset}"
@@ -61,6 +61,3 @@ python -u ${script} --x ${X_path} --y ${Y_path} --train_idx ${train_idx} --test_
 
 exit 0
 EOF
-
-# Submit with slurm
-sbatch ${job}.job
