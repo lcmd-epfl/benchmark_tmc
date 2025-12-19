@@ -13,8 +13,6 @@ def main():
     parser.add_argument('--y',      type=str,   dest='prop',       required=True, help='path to the properties file')
     parser.add_argument('--indices',      type=str,   dest='dir_indices',       required=True, help='Path to the directory containing train/test index files for 10-fold CV')
     parser.add_argument('--akernel',     type=str,   dest='akernel',     default=defaults.kernel,    help='local kernel type (G for Gaussian, L for Laplacian, myL for Laplacian for open-shell systems) (default '+defaults.kernel+')')
-    parser.add_argument('--gkernel',     type=str,   dest='gkernel',     default=defaults.gkernel,    help='global kernel type (avg for average kernel, rem for REMatch kernel) (default )')
-    parser.add_argument('--gdict',     nargs='*',   action=ParseKwargs, dest='gdict',     default=defaults.gdict,    help='dictionary like input string to initialize global kernel parameters')
     parser.add_argument('--print',  type=int,   dest='printlevel', default=0,                  help='printlevel')
     parser.add_argument('--eta',    type=float, dest='eta',   default=defaults.etaarr,   nargs='+', help='eta array')
     parser.add_argument('--sigma',  type=float, dest='sigma', default=defaults.sigmaarr, nargs='+', help='sigma array')
