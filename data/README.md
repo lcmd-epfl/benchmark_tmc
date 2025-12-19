@@ -64,10 +64,10 @@ The [`OctaKulik`](OctaKulik/) directory contains:
 - `OctaKulik_property_splitting.csv`:
   - `refcode`: Refcode assigned in this work
   - `total_charge`: Total molecular charge
-  - `multiplicity`: Lowest spin multiplicity among low-spin and high-spin states
+  - `multiplicity`: Spin multiplicity of the lowest-energy state (`splitting` > 0: `low_spin`; `splitting` < 0: `high_spin`)
   - `splitting`: Adiabatic spin-splitting energy (kcal/mol)
-  - `low_spin`: Low-spin multiplicity
-  - `high_spin`: High-spin multiplicity
+  - `low_spin`: Spin multiplicity of the low-spin state
+  - `high_spin`: Spin multiplicity of the high-spin state
 
 ---
 **Note:** To prepare extended XYZ files for MACE, all energy values are converted to eV.  
