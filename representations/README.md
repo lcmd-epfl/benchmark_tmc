@@ -1,78 +1,77 @@
-# Representations
+# Generate Molecular Representations
 
-Generate molecular representations (with timing measurements).
+This directory contains all scripts required to generate molecular representations, including wall-time measurements.
 
+## Representations for a Full Dataset
 
-## 1. Move into the dataset directory
+To generate molecular representations for an entire dataset, use the `dataset_submit.sh` script.  
+Arguments must be provided in the following order: **Dataset name**, **Representation type**, and **Directory path containing XYZ files**.  
+For the representation types used in the main text, see [`here`](rep_type.txt).
 
-``` bash
-cd TM-GSspinPlus
+```bash
+bash dataset_submit.sh TM-GSspinPlus SPAHM_e ../data/TM-GSspinPlus/0-xyz
+```
+This command creates a job file named:
+`generate_{rep}_{dataset}.job`
+
+### Debug Mode (10 Molecules)
+
+To generate representations for only 10 molecules (useful for testing and debugging), add the `debug` argument:
+
+```bash
+bash dataset_submit.sh TM-GSspinPlus SPAHM_e ../data/TM-GSspinPlus/0-xyz debug
 ```
 
+This creates a job file named `generate_{rep}_{dataset}_debug.job`
 
-## 2. Generate SLURM job scripts and submit
+If you are running on a SLURM-based system, submit the job using `sbatch`. For local execution, simply run the job file with `bash`.
 
-### For representation arrays of the full dataset
+## Representations for a Subset
 
-#### 2-1. Using QStack (e.g., SPAHM_e)
+To generate representations for a predefined subset of molecules, use `subset_submit.sh`.  
+In addition to the dataset, representation type, and XYZ directory, provide a text file containing refcodes for the subset.
 
-``` bash
-bash ../dataset_submit.sh generate_rep_spahm_qstack.py SPAHM_e qstack TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz
+```bash
+bash subset_submit.sh TM-GSspinPlus SPAHM_e ../data/TM-GSspinPlus/0-xyz \
+TM-GSspinPlus/subset_refcodes/TM-GSspinPlus_sub_0.txt
 ```
 
-#### 2-2. Using QML2 (e.g., SLATM)
+## Related Files and Scripts
 
-``` bash
-bash ../dataset_submit.sh generate_rep_slatm_fchl_qml2.py SLATM qml2 TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz
+For further details, see: 
+- `dataset_submit.sh`
+- `subset_submit.sh`
+- Python scripts in each dataset directory:
+  - `generate_rep_spahm_qstack.py`
+  - `generate_rep_slatm_fchl_qml2.py`
+  - `generate_rep_soap_featomic.py`
+- Example output files in `examples_output/*.out`  
+
+Execution timings are reported in the **last line** of each output file.  
+The job generates representation arrays (`.npy` files) in the corresponding dataset directory (for example, see [`TM-GSspinPlus`](TM-GSspinPlus/)).
+
+
+### Notes for the OctaKulik
+
+For representations used to predict **spin-splitting energies**, comment out the lines that include high-spin geometries (or high-spin states).  
+See the Python scripts in [`OctaKulik`](OctaKulik/) for details.
+
+# Kernel computations
+
+To measure kernel computation times for Gaussian (G) or Laplacian (L) kernels, use `kernel_submit.sh`.
+Provide the Python script `time_kernel_qstack.py`, dataset name, representation type, path to the `.npy` representation file, and kernel type.
+
+```bash
+bash kernel_submit.sh time_kernel_qstack.py TM-GSspinPlus SPAHM_e \
+TM-GSspinPlus/SPAHM_e-TM-GSspinPlus-subset.npy L
 ```
 
-#### 2-3. Using featomic (e.g., SOAP)
+This command generates a job file named:
+`kernel_{kernel}_{rep}_{dataset}.job`
 
-``` bash
-bash ../dataset_submit.sh generate_rep_soap_featomic.py SOAP_global featomic TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz
-```
+For details, see:
+- `kernel_submit.sh`
+- `time_kernel_qstack.py`
+- Example timing outputs in `examples_output/*.out`.  
 
-### Debug mode
-
-To generate representations for **only 10 molecules**:
-
-``` bash
-bash ../dataset_submit.sh generate_rep_spahm_qstack.py SPAHM_e qstack TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz debug
-```
-
-*For details, see `dataset_submit.sh` and each Python script.*
-
-
-### For a subset (used for measuring timings)
-
-``` bash
-bash ../subset_submit.sh generate_rep_spahm_qstack.py SPAHM_e qstack TM-GSspinPlus ~/benchmark_tmc/data/TM-GSspinPlus/0-xyz subset_refcodes/TM-GSspinPlus_sub_0.txt
-```
-
-*For details, see `subset_submit.sh`. You need to prepare a text file containing
-the refcodes for the subset. Example outputs are provided in the 
-`TM-GSspinPlus/examples_output/` folder.*
-
----
-
-## Notes for the OctaKulik Dataset
-
-Representation generation for **HOMO, LUMO, and gap** (using both low-spin and high-spin geometries)  
-and for **splitting** (using only low-spin optimized geometries) is performed separately.
-
-See the directories:
-
-- `OctaKulik/HOMO_LUMO_gap/`
-- `OctaKulik/splitting/`
-
----
-
-# Kernel Timings
-
-Measure Gaussian (G) or Laplacian (L) kernel computation time:
-
-``` bash
-bash kernel_submit.sh time_kernel_qstack.py SPAHM_e TM-GSspinPlus/examples_output/SPAHM_e-TM-GSspinPlus-subset.npy TM-GSspinPlus_subset L
-```
-
-*For details,see kernel_submit.sh, time_kernel_qstack.py, and the example files in example_kernel/.*
+Execution timings are reported in the **last line** of the corresponding output file.

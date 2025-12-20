@@ -113,6 +113,8 @@ def main():
     all_xyz_paths = []
     for refcode in df["refcode"]:
         all_xyz_paths.append(os.path.join(xyzdir, f"{refcode}_ls.xyz"))
+        # For representations used to predict spin-splitting energies,
+        # comment out the following line (high-spin geometry is not used)
         all_xyz_paths.append(os.path.join(xyzdir, f"{refcode}_hs.xyz"))
     
     only_z = ['Cr', 'Mn', 'Fe', 'Co']

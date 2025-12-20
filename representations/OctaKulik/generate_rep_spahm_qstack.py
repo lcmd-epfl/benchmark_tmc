@@ -127,14 +127,14 @@ def main():
     
     for refcode, total_charge, low_spin, high_spin, multiplicity in zip(df["refcode"], df["total_charge"], df["low_spin"], df["high_spin"], df["multiplicity"]):
         all_xyz_paths.append(os.path.join(xyzdir, f"{refcode}_ls.xyz"))
-        all_xyz_paths.append(os.path.join(xyzdir, f"{refcode}_hs.xyz"))
-        
         charges.append(total_charge)
-        charges.append(total_charge)
-
         spins.append(low_spin)
-        spins.append(high_spin)
-    
+        # For representations used to predict spin-splitting energies,
+        # comment out the following three lines (high-spin geometry is not used)
+        all_xyz_paths.append(os.path.join(xyzdir, f"{refcode}_hs.xyz"))
+        charges.append(total_charge)
+        spins.append(high_spin)    
+
     spins = np.array(spins) -1
     charges = np.array(charges)
     

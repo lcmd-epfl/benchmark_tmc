@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#SBATCH --job-name=kernel_L_SPAHM_e_TM-GSspinPlus
+#SBATCH --mem=6GB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH -o example_outputs/kernel_L_SPAHM_e_TM-GSspinPlus.out
+#SBATCH -e example_outputs/kernel_L_SPAHM_e_TM-GSspinPlus.err
+#SBATCH --partition=standard
+#SBATCH --time=1-00:00:00
+
+conda activate benchmark_tmc
+
+python -u "time_kernel_qstack.py" --rep_file "/home/ycho/benchmark_tmc/representations/TM-GSspinPlus/SPAHM_e-TM-GSspinPlus-subset.npy" --akernel "L"
+

@@ -1,0 +1,5 @@
+{'rep_file': '/home/ycho/benchmark_tmc/representations/TM-GSspinPlus/SPAHM_e-TM-GSspinPlus-subset.npy', 'akernel': 'L'}
+kernel_builder :  real: 0.1094  user: 0.1079  sys: 0.0011
+Loaded representation file: /home/ycho/benchmark_tmc/representations/TM-GSspinPlus/SPAHM_e-TM-GSspinPlus-subset.npy
+Representation shape: (500, 736)
+Kernel generation times (L): 0.10946687601972371
