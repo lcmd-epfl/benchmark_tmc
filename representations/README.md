@@ -58,7 +58,7 @@ See the Python scripts in [`OctaKulik`](OctaKulik/) for details.
 
 # Kernel computations
 
-To measure kernel computation times for Gaussian (G) or Laplacian (L) kernels, use `kernel_submit.sh`.
+To measure kernel computation times for Gaussian (G) or Laplacian (L) kernels, use `kernel_submit.sh`.  
 Provide the Python script `time_kernel_qstack.py`, dataset name, representation type, path to the `.npy` representation file, and kernel type.
 
 ```bash

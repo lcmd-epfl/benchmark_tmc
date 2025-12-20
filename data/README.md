@@ -42,7 +42,7 @@ The [`OctaKulik`](OctaKulik/) directory contains:
 - `2-dataset_splits/`: contains two subdirectories
   - `HOMO_LUMO_gap/`: indices corresponding to rows (0-based) in `OctaKulik_property_HOMO_LUMO_gap.csv`
   - `splitting/`: indices corresponding to rows (0-based) in `OctaKulik_property_splitting.csv`  
-  Each subdirectory contains the directories `2-cv10-splits/` (10-fold CV indices) and `3-train-valid-meyer/`
+  Each subdirectory contains the directories `2-cv10-splits/` (10-fold CV indices in this work) and `3-train-valid-meyer/`
   (train/validation indices from the reference paper)
 
 - `OctaKulik_train_valid_merged_clean.csv`:  
@@ -71,6 +71,6 @@ The [`OctaKulik`](OctaKulik/) directory contains:
 
 ---
 **Note:** To prepare extended XYZ files for MACE, all energy values are converted to eV.  
-The following conversion factors are used:
+The following unit conversions are used:
 - 1 kcal/mol = 0.0434 eV
 - 1 Hartree = 27.2114 eV

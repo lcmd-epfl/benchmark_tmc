@@ -26,6 +26,7 @@ Packages used to generate molecular representations can be built from source by 
   ```bash
   git clone https://github.com/lcmd-epfl/Q-stack
   cd Q-stack
+  git checkout versioning_issue
   pip install -e .[spahm,regression]
   ```
 - SLATM, FCHL: Install the modified qml2 version below, forked from [qml2](https://github.com/qml2code/qml2).  
@@ -39,9 +40,9 @@ Packages used to generate molecular representations can be built from source by 
   ```bash
   pip install featomic
   ```
-Bash scripts for generating `sbatch` job files, together with the required Python scripts, are provided as follows:
+Bash scripts for generating job files, along with the required Python scripts, are provided under:
 
-- Molecular representation generation (with timing measurements): [`representations/`](representations/)  
+- Molecular representation generation and kernel computations (including timing measurements): [`representations/`](representations/)  
   See the included [README.md](representations/README.md) for details.
 
 - Kernel ridge regression using Q-stack: [`krr/`](krr/)  
@@ -64,8 +65,35 @@ cd tmc_mace
 git checkout intensive
 pip install -e .
 ```
-Example job scripts are provided in [`mace/`](mace/) for each dataset subdirectory. See the included [README.md](mace/README.md) for details.  
+Example job scripts and train/test extended XYZ files are provided in [`mace/`](mace/) for each dataset subdirectory.  
+See the included [README.md](mace/README.md) for details.  
 Trained models, job scripts, and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:6w-xv).
 
+## Environments
 
+Two Conda environment files are provided as references.  
+Both environments were built on **Red Hat Enterprise Linux 9.4 (Plow), x86_64**.
+
+
+### Benchmark Environment
+
+The environment file [`environment_x86_64-rhel_9.yml`](environment_x86_64-rhel_9.yml) includes all dependencies required for molecular representation generation and kernel benchmarking, including the following packages:
+- `qstack`
+- `qml2`
+- `featomic`
+- `mace`
+
+```bash
+conda env create -f environment_x86_64-rhel_9.yml
+conda activate benchmark_tmc
+```
+
+### MACE-Only Environment
+
+This mace environment [`mace_x86_64-rhel_9.yml`](mace_x86_64-rhel_9.yml) includes only the dependencies required for training MACE models.
+
+```bash
+conda env create -f mace_x86_64-rhel_9.yml
+conda activate mace
+```
 
