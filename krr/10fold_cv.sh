@@ -44,12 +44,14 @@ fi
 
 ncpus=16
 mem="32GB"
-conda_env="qstack"  # Name of the conda environment
+conda_env="benchmark_tmc"
+
 dir_outputs="example_outputs"
 mkdir -p $dir_outputs
+
 job="CV-KRR-${kernel}-${rep}-${prop}-${dataset}"
 echo "Running script: $script"
-echo "Job name: $job"
+echo "Job filename: ${job}.job"
 
 # Generate jobfile
 cat << EOF | cat > ${job}.job
@@ -60,6 +62,8 @@ cat << EOF | cat > ${job}.job
 #SBATCH --cpus-per-task=${ncpus}
 #SBATCH -o ${dir_outputs}/${job}.out
 #SBATCH -e ${dir_outputs}/${job}.err
+#SBATCH --partition=standard
+#SBATCH --time=1-00:00:00
 
 conda activate ${conda_env}
 

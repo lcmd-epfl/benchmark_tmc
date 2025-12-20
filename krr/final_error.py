@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np
-from qstack.regression.kernel_utils import defaults, ParseKwargs
+from qstack.regression.kernel_utils import defaults
 from qstack.regression.hyperparameters import hyperparameters
 from qstack.regression.final_error import final_error
 from qstack.tools import correct_num_threads

@@ -1,7 +1,0 @@
-{'rep': 'SLATM', 'xyz': '/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz', 'debug': True, 'subset': None}
-mbtypes length: 3091
-asize: {1: 130, 5: 2, 6: 78, 7: 15, 8: 15, 9: 28, 14: 14, 15: 6, 16: 12, 17: 20, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1, 34: 6, 35: 8, 53: 6}
-SLATM representations generated!
-rep_generator :  real: 17.3703  user: 0.0243  sys: 0.0373
-Representation shape: (10, 398321)
-Generation time: 17.37031168397516

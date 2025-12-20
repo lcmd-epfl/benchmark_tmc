@@ -1,5 +1,0 @@
-{'rep': 'SPAHM_b_global', 'xyz': '/home/ycho/benchmark_tmc/data/TM-GSspinPlus/0-xyz', 'debug': True, 'subset': None}
-SPAHM_b_global representations generated!
-rep_generator :  real: 9057.6756  user: 115548.1923  sys: 28872.8781
-Representation shape: (10, 9972)
-Generation time: 9057.675664433977
