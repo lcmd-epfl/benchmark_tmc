@@ -34,6 +34,7 @@ Packages used to generate molecular representations can be built from source by 
   ```bash
   git clone https://github.com/lcmd-epfl/tmc_qml2
   cd tmc_qml2
+  git checkout TMC-benchmark-v0
   pip install -e .
   ```
 - SOAP: [featomic](https://github.com/metatensor/featomic), [Documentation](https://docs.metatensor.org/featomic/latest/get-started/installation.html)
@@ -62,7 +63,7 @@ Install the modified MACE version for intensive property prediction:
 ```bash
 git clone https://github.com/lcmd-epfl/tmc_mace
 cd tmc_mace
-git checkout intensive
+git checkout TMC-benchmark-v0
 pip install -e .
 ```
 Example job scripts and train/test extended XYZ files are provided in [`mace/`](mace/) for each dataset subdirectory.  
@@ -90,7 +91,7 @@ conda activate benchmark_tmc
 
 ### MACE-Only Environment
 
-This mace environment [`mace_x86_64-rhel_9.yml`](mace_x86_64-rhel_9.yml) includes only the dependencies required for training MACE models.
+This mace environment [`mace_x86_64-rhel_9.yml`](mace_x86_64-rhel_9.yml) includes only the dependencies required for training MACE models. It is compatible with RHEL 9.
 
 ```bash
 conda env create -f mace_x86_64-rhel_9.yml
