@@ -26,7 +26,7 @@ Packages used to generate molecular representations can be built from source by 
   ```bash
   git clone https://github.com/lcmd-epfl/Q-stack
   cd Q-stack
-  git checkout versioning_issue
+  git checkout TMC-benchmark-v0
   pip install -e .[spahm,regression]
   ```
 - SLATM, FCHL: Install the modified qml2 version below, forked from [qml2](https://github.com/qml2code/qml2).  
