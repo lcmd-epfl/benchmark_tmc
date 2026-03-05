@@ -108,6 +108,8 @@ def main():
     parser = argparse.ArgumentParser(description="This script runs CV-LC with hyperparameter optimization in parallel.")
     parser.add_argument("--prop", required=True, type=str,  help="selects the tagret file")
     parser.add_argument("--rep", required=True,  help="the selected representation")
+    parser.add_argument("--hs", required=False,  action="store_true", help="selects high-spin SSE only")
+    parser.add_argument("--ls", required=False,  action="store_true", help="selects low-spin SSE only")
     parser.add_argument("--out", required=False, type=str,  default=None, help="directory to save the outptu files")
     parser.add_argument("--nproc", required=False, type=int, default=1, help="number of parallel processes spanned by `joblib`")
     parser.add_argument("--nthreads", required=False, type=int, default=1, help="number of maximum threads spanned by each process")
@@ -122,9 +124,23 @@ def main():
     Y_file = args.prop
     targets = np.loadtxt(Y_file, dtype=float)
 
+    if args.hs is True:
+        idx_restrict = [i for i,t in enumerate(targets) if t<0]
+        prefix = "HS-"
+    elif args.ls is True:
+        idx_restrict = [i for i,t in enumerate(targets) if t>0]
+        prefix = "LS-"
+    else:
+        idx_restrict = [i for i,t in enumerate(targets)]
+        prefix = ""
+
+    reps = reps[idx_restrict]
+    targets = targets[idx_restrict]
+
     dirout = args.out if args.out is not None else os.getcwd()
     if not os.path.isdir(dirout): os.makedirs(dirout)
-    nameout='_'.join(['LC', os.path.basename(args.rep), os.path.basename(args.prop)])
+    nameout='_'.join(['LC', os.path.basename(args.rep).split(".")[0], os.path.basename(args.prop).split(".")[0]])
+    nameout = prefix+nameout
     nameout = os.path.join(dirout, nameout)
     
     ncalls = args.nproc
