@@ -1,0 +1,4 @@
+# target	       		tmQMg_ref-test_mae	65%_tmPHOTO-test_mae 	100%_tmPHOTO_3dmol-ref       	train_mae	val_mae	 
+"HOMO-LUMO gap / mHa"	       	6.04        			6.7583	 	8.08       			0.1042		7.5590	 
+#"HOMO-LUMO gap / eV"	       	0.16436 			0.18390 	0.21987 			0.0028354 	0.20569	 
+"Dipole moment / D"		0.895      			1.8930254	1.6				0.1683879	1.8961830
