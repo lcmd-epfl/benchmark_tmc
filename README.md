@@ -98,3 +98,10 @@ conda env create -f mace_x86_64-rhel_9.yml
 conda activate mace
 ```
 
+## Reproducing the NatQG results
+NatQG models were used to predict the HOMO-LUMO gap and dipole moment a subset of the tmPHOTO dataset.
+These sub-models were retrained using a fraction of the tmQMg dataset matching 65% of the tmPHOTO data.
+
+To reproduce our results follow the instructions from our fork of the tmQMg GiHub reposiory at:
+
+[tmc_NatQG](https://github.com/lcmd-epfl/tmc_NatQG/tree/TMC-benchmark-v1) (tag `TMC-benchmark-v1`)
