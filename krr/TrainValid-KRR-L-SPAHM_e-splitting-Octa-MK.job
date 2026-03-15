@@ -5,6 +5,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH -o example_outputs/TrainValid-KRR-L-SPAHM_e-splitting-Octa-MK.out
 #SBATCH -e example_outputs/TrainValid-KRR-L-SPAHM_e-splitting-Octa-MK.err
+#SBATCH --partition=standard
+#SBATCH --time=1-00:00:00
 
 conda activate benchmark_tmc
 

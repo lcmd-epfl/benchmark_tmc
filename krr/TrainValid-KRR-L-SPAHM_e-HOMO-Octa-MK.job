@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#SBATCH --job-name=TrainValid-KRR-L-SPAHM_e-HOMO-Octa-MK
+#SBATCH --mem=32GB
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH -o example_outputs/TrainValid-KRR-L-SPAHM_e-HOMO-Octa-MK.out
+#SBATCH -e example_outputs/TrainValid-KRR-L-SPAHM_e-HOMO-Octa-MK.err
+#SBATCH --partition=standard
+#SBATCH --time=1-00:00:00
+
+conda activate benchmark_tmc
+
+python -u final_error.py --x Octa-MK/HOMO_LUMO_gap/0-repr/SPAHM_e-Octa-MK.npy --y Octa-MK/HOMO_LUMO_gap/1-prop/HOMO-Octa-MK.txt --train_idx Octa-MK/HOMO_LUMO_gap/3-train-valid-meyer/0-train_indices.txt --test_idx Octa-MK/HOMO_LUMO_gap/3-train-valid-meyer/0-test_indices.txt --akernel myLfast --ada --save --name example_outputs/TrainValid-KRR-L-SPAHM_e-HOMO-Octa-MK
+
+exit 0
