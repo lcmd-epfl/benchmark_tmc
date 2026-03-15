@@ -1,0 +1,5 @@
+{'rep': 'SPAHM_e', 'xyz': '/home/ycho/benchmark_tmc/data/Octa-MK/0-xyz', 'debug': True}
+SPAHM_e representations generated!
+rep_generator :  real: 1.6097  user: 19.5687  sys: 0.0693
+Representation shape: (10, 544)
+Generation time: 1.6096893521025777

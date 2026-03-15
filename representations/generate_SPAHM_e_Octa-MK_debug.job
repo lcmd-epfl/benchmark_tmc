@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#SBATCH --job-name=generate_SPAHM_e_Octa-MK_debug
+#SBATCH --mem=32GB
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH -o example_outputs/generate_SPAHM_e_Octa-MK_debug.out
+#SBATCH -e example_outputs/generate_SPAHM_e_Octa-MK_debug.err
+#SBATCH --partition=standard
+#SBATCH --time=1-00:00:00
+
+conda activate benchmark_tmc
+
+cd Octa-MK
+python -u "generate_rep_spahm_qstack.py" --rep "SPAHM_e" --xyz "/home/ycho/benchmark_tmc/data/Octa-MK/0-xyz" --debug

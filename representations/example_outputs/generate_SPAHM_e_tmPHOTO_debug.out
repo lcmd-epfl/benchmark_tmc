@@ -1,0 +1,5 @@
+{'rep': 'SPAHM_e', 'xyz': '/home/ycho/benchmark_tmc/data/tmPHOTO/0-xyz', 'debug': True, 'subset': None}
+SPAHM_e representations generated!
+rep_generator :  real: 5.3346  user: 68.1647  sys: 7.0441
+Representation shape: (10, 902)
+Generation time: 5.334588320925832
