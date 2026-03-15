@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ## Data
 The [`data/`](data/) directory contains all datasets, including XYZ files, property CSV files, extended XYZ files (for MACE), and dataset splits.  
-It includes three datasets: **TM-GSspinPlus**, **tmPHOTO**, and **OctaKulik**. 
+It includes three datasets: **TM-GSspinPlus**, **tmPHOTO**, and **Octa-MK**. 
 See the included [README.md](data/README.md) for details.
 
 ## Molecular Representations
@@ -34,7 +34,7 @@ Packages used to generate molecular representations can be built from source by 
   ```bash
   git clone https://github.com/lcmd-epfl/tmc_qml2
   cd tmc_qml2
-  git checkout TMC-benchmark-v0
+  git checkout TMC-benchmark-v1
   pip install -e .
   ```
 - SOAP: [featomic](https://github.com/metatensor/featomic), [Documentation](https://docs.metatensor.org/featomic/latest/get-started/installation.html)
@@ -53,8 +53,7 @@ Precomputed NumPy arrays of the molecular representations used in this work are 
 
 ## 3DMol
 
-Installation instructions and example input files for 3DMol are available at:
-https://github.com/lcmd-epfl/3DMol/tree/TMC-benchmark-v0  
+Installation instructions and example input files are available in [3DMol](https://github.com/lcmd-epfl/3DMol/tree/TMC-benchmark-v1) (tag `TMC-benchmark-v1`).
 Trained models and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:6w-xv).
 
 ## MACE
@@ -63,12 +62,16 @@ Install the modified MACE version for intensive property prediction:
 ```bash
 git clone https://github.com/lcmd-epfl/tmc_mace
 cd tmc_mace
-git checkout TMC-benchmark-v0
+git checkout TMC-benchmark-v1
 pip install -e .
 ```
 Example job scripts and train/test extended XYZ files are provided in [`mace/`](mace/) for each dataset subdirectory.  
 See the included [README.md](mace/README.md) for details.  
 Trained models, job scripts, and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:6w-xv).
+
+## NatQG
+Natural quantum graph (NatQG)-based GNN models are additionally evaluated for predicting the HOMO-LUMO gap and dipole moment magnitude on a subset of tmPHOTO. 
+Further details are available in [tmc_NatQG](https://github.com/lcmd-epfl/tmc_NatQG/tree/TMC-benchmark-v1) (tag `TMC-benchmark-v1`).
 
 ## Environments
 
@@ -97,11 +100,3 @@ This mace environment [`mace_x86_64-rhel_9.yml`](mace_x86_64-rhel_9.yml) include
 conda env create -f mace_x86_64-rhel_9.yml
 conda activate mace
 ```
-
-## Reproducing the NatQG results
-NatQG models were used to predict the HOMO-LUMO gap and dipole moment a subset of the tmPHOTO dataset.
-These sub-models were retrained using a fraction of the tmQMg dataset matching 65% of the tmPHOTO data.
-
-To reproduce our results follow the instructions from our fork of the tmQMg GiHub reposiory at:
-
-[tmc_NatQG](https://github.com/lcmd-epfl/tmc_NatQG/tree/TMC-benchmark-v1) (tag `TMC-benchmark-v1`)
