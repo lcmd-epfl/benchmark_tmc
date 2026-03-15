@@ -140,9 +140,7 @@ def main():
     print("Generation time:", elapsed)
 
     # Output filename
-    if args.subset:
-        filename = f"{args.rep}-{dataset}-subset"
-    elif args.debug:
+    if args.debug:
         filename = f"{args.rep}-{dataset}-debug"
     else:
         filename = f"{args.rep}-{dataset}"

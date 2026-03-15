@@ -139,7 +139,7 @@ def main():
     charges = np.array(charges)
     
     only_z = ['Cr', 'Mn', 'Fe', 'Co']
-    max_el = 902
+    max_el = 544
     elements = ['C', 'Cl', 'Co', 'Cr', 'F', 'Fe', 'H', 'I', 'Mn', 'N', 'O', 'P', 'S']
 
     if args.debug:
@@ -158,9 +158,7 @@ def main():
     print("Generation time:", elapsed)
 
     # Output filename
-    if args.subset:
-        filename = f"{args.rep}-{dataset}-subset"
-    elif args.debug:
+    if args.debug:
         filename = f"{args.rep}-{dataset}-debug"
     else:
         filename = f"{args.rep}-{dataset}"
