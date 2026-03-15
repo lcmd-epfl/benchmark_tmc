@@ -30,8 +30,8 @@ The [`tmPHOTO`](tmPHOTO/) directory contains:
   - `gap`: HOMO-LUMO gap (Hartree)
   - `dipole_moment_Debye`: Dipole moment magnitude (Debye)
 
-## OctaKulik
-The [`OctaKulik`](OctaKulik/) directory contains:
+## Octa-MK
+The [`Octa-MK`](Octa-MK/) directory contains:
 - `0-xyz/`: DFT-optimized geometries in low-spin (`*_ls.xyz`) or high-spin (`*_hs.xyz`) states
 - `1-extended_xyz/`: Extended XYZ files for MACE
   - `HOMO_LUMO_gap/`: 10 train/test splits for HOMO, LUMO, and HOMO-LUMO gap
@@ -40,12 +40,12 @@ The [`OctaKulik`](OctaKulik/) directory contains:
     ([DOI: 10.1088/2632-2153/ad9f22](https://doi.org/10.1088/2632-2153/ad9f22),
     [repository](https://github.com/hjkgrp/many_body_ml)); files with `LS` correspond to spin-splitting energy targets
 - `2-dataset_splits/`: contains two subdirectories
-  - `HOMO_LUMO_gap/`: indices corresponding to rows (0-based) in `OctaKulik_property_HOMO_LUMO_gap.csv`
-  - `splitting/`: indices corresponding to rows (0-based) in `OctaKulik_property_splitting.csv`  
+  - `HOMO_LUMO_gap/`: indices corresponding to rows (0-based) in `Octa-MK_property_HOMO_LUMO_gap.csv`
+  - `splitting/`: indices corresponding to rows (0-based) in `Octa-MK_property_splitting.csv`  
   Each subdirectory contains the directories `2-cv10-splits/` (10-fold CV indices in this work) and `3-train-valid-meyer/`
   (train/validation indices from the reference paper)
 
-- `OctaKulik_train_valid_merged_clean.csv`:  
+- `Octa-MK_train_valid_merged_clean.csv`:  
   The [training data](https://github.com/hjkgrp/many_body_ml/blob/main/data/training_data.csv) and
   [validation data](https://github.com/hjkgrp/many_body_ml/blob/main/data/validation_data.csv) from the reference paper were merged into a single dataset.  
   Refcodes were assigned in this work for convenience. For example, the complex
@@ -53,7 +53,7 @@ The [`OctaKulik`](OctaKulik/) directory contains:
   is assigned the refcode `train_0116`, with geometries `train_0116_ls.xyz` (low-spin optimized)
   and `train_0116_hs.xyz` (high-spin optimized).
 
-- `OctaKulik_property_HOMO_LUMO_gap.csv`:
+- `Octa-MK_property_HOMO_LUMO_gap.csv`:
   - `refcode`: Refcode assigned in this work
   - `total_charge`: Total molecular charge
   - `multiplicity`: Spin multiplicity used in the computation
@@ -61,7 +61,7 @@ The [`OctaKulik`](OctaKulik/) directory contains:
   - `LUMO`: LUMO energy (eV)
   - `gap`: HOMO-LUMO gap (eV)
 
-- `OctaKulik_property_splitting.csv`:
+- `Octa-MK_property_splitting.csv`:
   - `refcode`: Refcode assigned in this work
   - `total_charge`: Total molecular charge
   - `multiplicity`: Spin multiplicity of the lowest-energy state (`splitting` > 0: `low_spin`; `splitting` < 0: `high_spin`)

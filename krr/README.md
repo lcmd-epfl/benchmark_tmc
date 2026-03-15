@@ -20,14 +20,14 @@ For more details, see **`10fold_cv.sh`** and **`cross_validation.py`**.
 
 ## Train/Test Splits
 
-For the OctaKulik dataset, 80/20 train/validation splits from the reference paper  
+For the Octa-MK dataset, 80/20 train/validation splits from the reference paper  
 ([DOI: 10.1088/2632-2153/ad9f22](https://doi.org/10.1088/2632-2153/ad9f22)) were also evaluated.
 
-To run these calculations, use the `train_valid_OctaKulik.sh` script, which generates a job file.  
+To run these calculations, use the `train_valid_Octa-MK.sh` script, which generates a job file.  
 Provide the Python script `final_error.py`, representation type, target property, and kernel:
 
 ```bash
-bash train_valid_OctaKulik.sh final_error.py SPAHM_e splitting L
+bash train_valid_Octa-MK.sh final_error.py SPAHM_e splitting L
 ```
 
 This command generates a job file named  
@@ -35,7 +35,7 @@ This command generates a job file named
 
 As above, submit the job using `sbatch` on SLURM, or run it locally with `bash`.
 
-For more details, see **`train_valid_OctaKulik.sh`** and **`final_error.py`**.
+For more details, see **`train_valid_Octa-MK.sh`** and **`final_error.py`**.
 
 Example outputs are provided in the **`example_outputs/`** directory.
 
@@ -49,7 +49,7 @@ The [`TM-GSspinPlus`](TM-GSspinPlus/) and [`tmPHOTO`](tmPHOTO/) directories cont
 - **`krr-hypers-fold0.txt`**: A text file containing the optimal KRR hyperparameters (`eta` and `sigma`) obtained using Q-stack for a given representation, property, and kernel combination.  
   Only the optimal hyperparameters yielding the lowest mean absolute error when training on the first fold (`0_train_indices.txt`, `0_test_indices.txt`) are included, as the optimal values are generally consistent across folds.
 
-The [`OctaKulik`](OctaKulik/) directory contains two subdirectories:
+The [`Octa-MK`](Octa-MK/) directory contains two subdirectories:
 
 - **`HOMO_LUMO_gap/`**
 - **`splitting/`**

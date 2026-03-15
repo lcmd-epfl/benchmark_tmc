@@ -51,10 +51,10 @@ Execution timings are reported in the **last line** of each output file.
 The job generates representation arrays (`.npy` files) in the corresponding dataset directory (for example, see [`TM-GSspinPlus`](TM-GSspinPlus/)).
 
 
-### Notes for the OctaKulik
+### Notes for the Octa-MK
 
 For representations used to predict **spin-splitting energies**, comment out the lines that include high-spin geometries (or high-spin states).  
-See the Python scripts in [`OctaKulik`](OctaKulik/) for details.
+See the Python scripts in [`Octa-MK`](Octa-MK/) for details.
 
 # Kernel computations
 

@@ -25,7 +25,7 @@ All hyperparameters are specified directly in the job (`.job`) files. Job script
 - Each dataset contains a `1-extended_xyz/` directory with MACE input files in extended XYZ format.
 - To prepare extended XYZ files for MACE, all energy values are converted to **eV**.
 - **10-fold cross-validation (CV)** splits are provided (folds 0–9, for example, `0_train.xyz` and `0_test.xyz`).
-- For **OctaKulik**, 10-fold CV splits are provided separately for [`HOMO_LUMO_gap`](OctaKulik/1-extended_xyz/HOMO_LUMO_gap/) and [`splitting`](OctaKulik/1-extended_xyz/splitting/).  
+- For **Octa-MK**, 10-fold CV splits are provided separately for [`HOMO_LUMO_gap`](Octa-MK/1-extended_xyz/HOMO_LUMO_gap/) and [`splitting`](Octa-MK/1-extended_xyz/splitting/).  
   In addition, a **train–validation split** (as defined in the reference paper) is provided, together with the corresponding job files.  
-  See the `--train_file` and `--test_file` in the job scripts under [`OctaKulik`](OctaKulik/).
+  See the `--train_file` and `--test_file` in the job scripts under [`Octa-MK`](Octa-MK/).
 

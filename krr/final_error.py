@@ -8,7 +8,7 @@ from qstack.tools import correct_num_threads
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description='Train/valid splits for Octakulik (KRR hyperparameters search included).')
+    parser = argparse.ArgumentParser(description='Train/valid splits for Octa-MK (KRR hyperparameters search included).')
     parser.add_argument('--x',      type=str,   dest='repr',       required=True, help='path to the representations file')
     parser.add_argument('--y',      type=str,   dest='prop',       required=True, help='path to the properties file')
     parser.add_argument('--akernel',     type=str,   dest='akernel',     default=defaults.kernel,    help='local kernel type (G for Gaussian, L for Laplacian, myL for Laplacian for open-shell systems) (default '+defaults.kernel+')')
