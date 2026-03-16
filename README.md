@@ -49,14 +49,15 @@ Bash scripts for generating job files, along with the required Python scripts, a
 - Kernel ridge regression using Q-stack: [`krr/`](krr/)  
   See the included [README.md](krr/README.md) for details.
 
-Precomputed NumPy arrays of the molecular representations used in this work are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:6w-xv).
+Precomputed NumPy arrays of the molecular representations used in this work are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:pv-nj).
 
-## 3DMol
+## Geometric deep learning models
+### 3DMol
 
 Installation instructions and example input files are available in [3DMol](https://github.com/lcmd-epfl/3DMol/tree/TMC-benchmark-v1) (tag `TMC-benchmark-v1`).
-Trained models and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:6w-xv).
+Trained models and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:pv-nj).
 
-## MACE
+### MACE
 
 Install the modified MACE version for intensive property prediction:
 ```bash
@@ -66,11 +67,10 @@ git checkout TMC-benchmark-v1
 pip install -e .
 ```
 Example job scripts and train/test extended XYZ files are provided in [`mace/`](mace/) for each dataset subdirectory.  
-See the included [README.md](mace/README.md) for details.  
-Trained models, job scripts, and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:6w-xv).
+See the included [README.md](mace/README.md) for details. Trained models, job scripts, and log files are available on [Materials Cloud](https://doi.org/10.24435/materialscloud:pv-nj).
 
-## NatQG
-Natural quantum graph (NatQG)-based GNN models are additionally evaluated for predicting the HOMO-LUMO gap and dipole moment magnitude on a subset of tmPHOTO. 
+### NatQG
+Natural quantum graph (NatQG)-based GNN models are additionally evaluated for predicting the HOMO-LUMO gap and dipole moment magnitude on a **subset of tmPHOTO**. 
 Further details are available in [tmc_NatQG](https://github.com/lcmd-epfl/tmc_NatQG/tree/TMC-benchmark-v1) (tag `TMC-benchmark-v1`).
 
 ## Environments
