@@ -52,6 +52,7 @@ The [`Octa-MK`](Octa-MK/) directory contains:
   *cr_3_[O-]#[C+]_[O-]#[C+]_[O-]#[C+]_[O-]#[C+]_[O-]#[C+]_[O-]#[C+]* in the original training set
   is assigned the refcode `train_0116`, with geometries `train_0116_ls.xyz` (low-spin optimized)
   and `train_0116_hs.xyz` (high-spin optimized).
+  This file shares several columns with `Octa-MK_property_splitting.csv`, including `multiplicity`, `low_spin`, and `high_spin`.
 
 - `Octa-MK_property_HOMO_LUMO_gap.csv`:
   - `refcode`: Refcode assigned in this work
@@ -64,7 +65,7 @@ The [`Octa-MK`](Octa-MK/) directory contains:
 - `Octa-MK_property_splitting.csv`:
   - `refcode`: Refcode assigned in this work
   - `total_charge`: Total molecular charge
-  - `multiplicity`: Spin multiplicity of the lowest-energy state (`splitting` > 0: `low_spin`; `splitting` < 0: `high_spin`)
+  - `multiplicity`: Spin multiplicity of the energetically preferred spin state (`low_spin` if `splitting` > 0, `high_spin` if `splitting` < 0).
   - `splitting`: Adiabatic spin-splitting energy (kcal/mol)
   - `low_spin`: Spin multiplicity of the low-spin state
   - `high_spin`: Spin multiplicity of the high-spin state
